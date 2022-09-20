@@ -1,0 +1,100 @@
+                                            EXPERIMENT-1:
+
+
+1)mysql> create database student;
+  mysql> create table student(Regno int(10),Name char(20),Dob int(10),MobileNo int(10),City char(10));
+Query OK, 0 rows affected (0.01 sec)
+mysql> use student;
+Database changed
+mysql> desc student;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| Regno    | int(10)  | YES  |     | NULL    |       |
+| Name     | char(20) | YES  |     | NULL    |       |
+| Dob      | int(10)  | YES  |     | NULL    |       |
+| MobileNo | int(10)  | YES  |     | NULL    |       |
+| City     | char(10) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+
+2)mysql> create database faculty;
+Query OK, 1 row affected (0.00 sec)
+mysql> use faculty;
+Database changed
+mysql> create table faculty(Facno int(10),FacName char(20),gender char(1),Dob int(10),MobileNo int(10),Doj int(10));
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc faculty;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| Facno    | int(10)  | YES  |     | NULL    |       |
+| FacName  | char(20) | YES  |     | NULL    |       |
+| gender   | char(1)  | YES  |     | NULL    |       |
+| Dob      | int(10)  | YES  |     | NULL    |       |
+| MobileNo | int(10)  | YES  |     | NULL    |       |
+| Doj      | int(10)  | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+
+3)mysql> create database department;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use department;
+Database changed
+mysql> create table department(Deptno int(10),DeptName char(20),DeptHead char(20));
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc department;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| Deptno   | int(10)  | YES  |     | NULL    |       |
+| DeptName | char(20) | YES  |     | NULL    |       |
+| DeptHead | char(20) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+
+4)mysql> create database course;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> create table course(CourseNo int(10),CourseDesc char(20),CourseType char(10),SemNo int(10),HallNo int(10),FacNo int(10));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc course;
++------------+----------+------+-----+---------+-------+
+| Field      | Type     | Null | Key | Default | Extra |
++------------+----------+------+-----+---------+-------+
+| CourseNo   | int(10)  | YES  |     | NULL    |       |
+| CourseDesc | char(20) | YES  |     | NULL    |       |
+| CourseType | char(10) | YES  |     | NULL    |       |
+| SemNo      | int(10)  | YES  |     | NULL    |       |
+| HallNo     | int(10)  | YES  |     | NULL    |       |
+| FacNo      | int(10)  | YES  |     | NULL    |       |
++------------+----------+------+-----+---------+-------+
+6 rows in set (0.03 sec)
+
+
+5)mysql> use faculty;
+Database changed
+mysql>  ALTER TABLE faculty ADD deptno char(4);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc faculty;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| Facno    | int(10)  | YES  |     | NULL    |       |
+| FacName  | char(20) | YES  |     | NULL    |       |
+| gender   | char(1)  | YES  |     | NULL    |       |
+| Dob      | int(10)  | YES  |     | NULL    |       |
+| MobileNo | int(10)  | YES  |     | NULL    |       |
+| Doj      | int(10)  | YES  |     | NULL    |       |
+| deptno   | char(4)  | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+7 rows in set (0.03 sec)
