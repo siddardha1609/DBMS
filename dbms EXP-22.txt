@@ -1,0 +1,50 @@
+                             EXPERIMENT-22
+
+
+
+###
+
+mysql> create database booksdata;
+Query OK, 1 row affected (0.00 sec)
+mysql> use booksdata;
+Database changed
+mysql>  create table storybooks(BNo int(10),BName varchar(30),publisher_name varchar(40),Publisher_Country varchar(50));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into storybooks values(1, "king of wars", "ram", "india");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into storybooks values(2, "the night devil", "sanvi", "uk");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into storybooks values(3, "series or portugal", "thomas", "portugal");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into storybooks values(4, "captain america", "steve", "usa");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from storybooks;
++------+--------------------+----------------+-------------------+
+| BNo  | BName              | publisher_name | Publisher_Country |
++------+--------------------+----------------+-------------------+
+|    1 | king of wars       | ram            | india             |
+|    2 | the night devil    | sanvi          | uk                |
+|    3 | series or portugal | thomas         | portugal          |
+|    4 | captain america    | steve          | usa               |
++------+--------------------+----------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql>  update storybooks set publisher_name = ' sanjay' where Bno = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from storybooks;
++------+--------------------+----------------+-------------------+
+| BNo  | BName              | publisher_name | Publisher_Country |
++------+--------------------+----------------+-------------------+
+|    1 | king of wars       | sanjay n       | india             |
+|    2 | the night devil    | sanvi          | uk                |
+|    3 | series or portugal | thomas         | portugal          |
+|    4 | captain america    | steve          | usa               |
++------+--------------------+----------------+-------------------+
+4 rows in set (0.00 sec)
