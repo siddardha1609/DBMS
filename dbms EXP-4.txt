@@ -1,0 +1,132 @@
+              EXPERIMENT-4
+
+
+
+
+1)
+mysql> use student;
+Database changed
+mysql> SELECT regno,name,dob FROM STUDENT;
++-----------+------+------+
+| regno     | name | dob  |
++-----------+------+------+
+| 191711342 | ram  | 2004 |
+| 192111567 | sam  | 2005 |
++-----------+------+------+
+2 rows in set (0.00 sec)
+
+
+2)
+mysql> use student;
+Database changed
+SELECT * FROM STUDENT WHERE GENDER = "F" ;
++-------+--------+--------+----------+-------------+
+| regno | name   | gender | mobileno | city        |
++-------+--------+--------+----------+-------------+
+|   561 | sanvi  | F      |958365647 | CHENNAI     |
++-------+--------+--------+----------+-------------+
+
+
+3)mysql> use student;
+Database changed
+mysql> select *from student where ((gender,course_name) = ('M','C001'));
++-------+--------+--------+----------+----------+-------------+
+| regno | name   | gender | mobileno | city     | course_name |
++-------+--------+--------+----------+----------+-------------+
+|   153 | sanjai | M      |   837649 | SAILAYUR | C001        |
+|   155 | AJAI   | M      | 63587738 | MOTIHARI | C001        |
++-------+--------+--------+----------+----------+-------------+
+2 rows in set (0.00 sec)
+
+
+4)
+mysql> use faculty;
+Database changed
+mysql> SELECT * FROM FACULTY WHERE DOJ < DATE("2021");
+Empty set (0.00 sec)
+
+
+5)
+mysql> use course;
+Database changed
+mysql>SELECT * FROM COURSE WHERE HallNo IS NULL ;
++----------+--------------+------------+-------+--------+-------+
+| courseno | CourseDesc   | courseType | semNo | HallNo | FacNo |
++----------+--------------+------------+-------+--------+-------+
+| 01       | COMPUTER_SCI | M          | 1     | 004    | 2001  |
+| 02       | AI           | M          | 3     | 067    | 2002  |
+| 03       | ENGLISH      | M          | 1     | 001    | 2005  |
+| 04       | ETHICS       | E          | 2     | 055    | 2004  |
+| 05       | DATA_STRUCT  | M          | 6     | 044    | 2003  |
+| 01       | COMPUTER_SCI | M          | 1     | 004    | 2001  |
+| 02       | AI           | M          | 3     | 067    | 2002  |
+| 03       | ENGLISH      | M          | 1     | 001    | 2005  |
+| 04       | ETHICS       | E          | 2     | 055    | 2004  |
+| 05       | DATA_STRUCT  | M          | 6     | 044    | 2003  |
++----------+--------------+------------+-------+--------+-------+
+
+
+6)
+mysql> use student;
+Database changed
+mysql> SELECT * FROM STUDENT WHERE STUDENT.NAME LIKE '%ma' ;
++-----------+------+------+----------+--------+
+| Regno     | Name | Dob  | MobileNo | City   |
++-----------+------+------+----------+--------+
+| 191711342 | ram  | 2004 | 95435342 | mumbai |
+| 192111567 | sam  | 2005 | 78554122 | vizag  |
++-----------+------+------+----------+--------+
+Empty set (0.00 sec)
+
+"there was no student with "ma" starting..."
+
+
+7)
+mysql> use student;
+Database changed
+mysql> SELECT * FROM STUDENT  WHERE NAME LIKE '%ai%';
++-----------+------+------+----------+--------+
+| Regno     | Name | Dob  | MobileNo | City   |
++-----------+------+------+----------+--------+
+| 191711342 | ram  | 2004 | 95435342 | mumbai |
+| 192111567 | sam  | 2005 | 78554122 | vizag  |
++-----------+------+------+----------+--------+
+Empty set (0.00 sec)
+"there was no student with "ma" ending..."
+
+8)
+mysql> use student;
+Database changed
+mysql> SELECT * FROM STUDENT  WHERE CITY LIKE '%sal%';
++-----------+------+------+----------+--------+
+| Regno     | Name | Dob  | MobileNo | City   |
++-----------+------+------+----------+--------+
+| 191711342 | ram  | 2004 | 95435342 | mumbai |
+| 192111567 | sam  | 2005 | 78554122 | vizag  |
++-----------+------+------+----------+--------+
+Empty set (0.00 sec)
+"there was no city with "sal" substring..."
+
+
+9)
+mysql> use student;
+Database changed
+mysql> SELECT * FROM STUDENT WHERE CHAR_LENGTH(NAME) != 6;
++-----------+------+------+----------+--------+
+| Regno     | Name | Dob  | MobileNo | City   |
++-----------+------+------+----------+--------+
+| 191711342 | ram  | 2004 | 95435342 | mumbai |
+| 192111567 | sam  | 2005 | 78554122 | vizag  |
++-----------+------+------+----------+--------+
+2 rows in set (0.02 sec)
+
+
+10)
+mysql> use student;
+Database changed
+mysql> SELECT * FROM STUDENT WHERE NAME LIKE '%th%';
+Empty set (0.00 sec)
+
+
+
+
