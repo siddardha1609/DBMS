@@ -1,0 +1,155 @@
+                 EXPERIMENT-3
+
+
+
+1)
+1.1)mysql> use student;
+Database changed
+mysql> desc student;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| Regno    | int(10)  | NO   | PRI | 0       |       |
+| Name     | char(20) | YES  |     | NULL    |       |
+| Dob      | int(10)  | YES  |     | NULL    |       |
+| MobileNo | int(10)  | YES  |     | NULL    |       |
+| City     | char(10) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+
+mysql> insert into student values(191711342,'ram',2004,95435342,'mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from student;
++-----------+------+------+----------+--------+
+| Regno     | Name | Dob  | MobileNo | City   |
++-----------+------+------+----------+--------+
+| 191711342 | ram  | 2004 | 95435342 | mumbai |
+| 192111567 | sam  | 2005 | 78554122 | vizag  |
++-----------+------+------+----------+--------+
+2 rows in set (0.00 sec)
+
+
+1.2)mysql> insert into faculty values(12443453,'kishore','m',1990,96654875,2019,03);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into faculty values(11447453,'kumar','m',1993,967854875,2019,02);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into faculty values(12443453,'kishore','m',1990,9623875,2020,03);
+
+mysql> insert into faculty values(12467853,'kiran','m',1995,96552875,2020,03);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select*from faculty;
++----------+---------+--------+------+-----------+------+--------+
+| Facno    | FacName | gender | Dob  | MobileNo  | Doj  | deptno |
++----------+---------+--------+------+-----------+------+--------+
+| 11447453 | kumar   | m      | 1993 | 967854875 | 2019 | 2      |
+| 12443453 | kishore | m      | 1990 |  96654875 | 2019 | 3      |
+| 12467853 | kiran   | m      | 1995 |  96552875 | 2020 | 3      |
++----------+---------+--------+------+-----------+------+--------+
+3 rows in set (0.00 sec)
+
+mysql> use student;
+Database changed
+mysql> desc student;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| Regno    | int(10)  | NO   | PRI | 0       |       |
+| Name     | char(20) | YES  |     | NULL    |       |
+| Dob      | int(10)  | YES  |     | NULL    |       |
+| MobileNo | int(10)  | YES  |     | NULL    |       |
+| City     | char(10) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+
+
+2)mysql> use student;
+Database changed
+mysql> desc student;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| Regno    | int(10)  | NO   | PRI | 0       |       |
+| Name     | char(20) | YES  |     | NULL    |       |
+| Dob      | int(10)  | YES  |     | NULL    |       |
+| MobileNo | int(10)  | YES  |     | NULL    |       |
+| City     | char(10) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> UPDATE STUDENT SET regno = 171 WHERE regno = 342;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select*from student;
++-----------+------+------+----------+--------+
+| Regno     | Name | Dob  | MobileNo | City   |
++-----------+------+------+----------+--------+
+| 191711342 | ram  | 2004 | 95435342 | mumbai |
+| 192111567 | sam  | 2005 | 78554122 | vizag  |
++-----------+------+------+----------+--------+
+2 rows in set (0.00 sec)
+
+
+3)mysql> use faculty;
+Database changed
+mysql> desc faculty;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| Facno    | int(10)  | NO   | PRI | 0       |       |
+| FacName  | char(20) | YES  |     | NULL    |       |
+| gender   | char(1)  | YES  |     | NULL    |       |
+| Dob      | int(10)  | YES  |     | NULL    |       |
+| MobileNo | int(10)  | YES  |     | NULL    |       |
+| Doj      | int(10)  | YES  |     | NULL    |       |
+| deptno   | char(4)  | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> DELETE FROM FACULTY WHERE DOJ = "2020";
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from faculty;
++----------+---------+--------+------+-----------+------+--------+
+| Facno    | FacName | gender | Dob  | MobileNo  | Doj  | deptno |
++----------+---------+--------+------+-----------+------+--------+
+| 11447453 | kumar   | m      | 1993 | 967854875 | 2019 | 2      |
+| 12443453 | kishore | m      | 1990 |  96654875 | 2019 | 3      |
++----------+---------+--------+------+-----------+------+--------+
+2 rows in set (0.00 sec)
+
+
+4)mysql> use faculty;
+Database changed
+mysql> update faculty SET DOB = "1995" WHERE FacName = 'RAM';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select*from faculty;
++----------+---------+--------+------+-----------+------+--------+
+| Facno    | FacName | gender | Dob  | MobileNo  | Doj  | deptno |
++----------+---------+--------+------+-----------+------+--------+
+| 11447453 | kumar   | m      | 1993 | 967854875 | 2019 | 2      |
+| 12443453 | kishore | m      | 1990 |  96654875 | 2019 | 3      |
++----------+---------+--------+------+-----------+------+--------+
+2 rows in set (0.00 sec)
+
+
+5)
+mysql> use faculty;
+Database changed
+mysql> DELETE FROM FACULTY WHERE DOB < NOW() - INTERVAL 65 YEAR;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> select*from faculty;
+Empty set (0.00 sec)
+
+"No one is aged than 65"
+
+
