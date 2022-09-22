@@ -1,0 +1,42 @@
+             EXPERIMENT-24
+
+
+
+###
+
+mysql> create database cars;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> create table cars(Car_No int(10), Car_Name varchar(30), DOR date, Return_Date date);
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into cars values(15, "Ford", "2021.1.10", "2022.6.03");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into cars values(10, "Fortuner", "2021.5.20", "2022.5.15");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into cars values(13, "swift", "2021.9.22", "2022.8.25");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into cars values(1, "RR", "2021.12.24", "2022.7.09");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from cars;
++--------+----------+------------+-------------+
+| Car_No | Car_Name | DOR        | Return_Date |
++--------+----------+------------+-------------+
+|     15 | Ford     | 2021-01-10 | 2022-06-03  |
+|     10 | Fortuner | 2021-05-20 | 2022-05-15  |
+|     13 | swift    | 2021-09-22 | 2022-08-25  |
+|      1 | RR       | 2021-12-24 | 2022-07-09  |
++--------+----------+------------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> select car_no, car_name from cars where return_date = '2022.07.09';
++--------+----------+
+| car_no | car_name |
++--------+----------+
+|      1 | RR       |
++--------+----------+
+1 row in set (0.00 sec)
