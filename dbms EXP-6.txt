@@ -1,0 +1,60 @@
+                  EXPERIMENT-6
+
+
+
+6)
+mysql> select course_sub, sum(courseno) as courseno from course group by course_sub;
++---------------+----------+
+| course_sub    | courseno |
++---------------+----------+
+| dbms          |        6 |
+| pdsd          |        8 |
+| mpmc          |        9 |
+| os            |        5 |
+| ds            |        2 |
++---------------+----------+
+5 rows in set (0.09 sec)
+
+mysql> select * from student;
++-------+--------+--------+-----+----------+---------+
+| RegNo | Name   | Gender | DOB | MobileNo | City    |
++-------+--------+--------+-----+----------+---------+
+|   121 | ram    | M      |2003 |   789012 | Mumbai  |
+|   131 | kumar  | M      |2005 |   980790 | Chennai |
+|   141 | rama   | F      |2001 |   990790 | Chennai |
+|   151 | sruthi | F      |2001 |  6546789 | Pune    |
++-------+--------+--------+-----+----------+---------+
+4 rows in set (0.05 sec)
+
+mysql> select name, gender, mobileno from student order by regno;
++--------+--------+----------+
+| name   | gender | mobileno |
++--------+--------+----------+
+| ram    | M      |   789012 |
+| kumar  | M      |   980790 |
+| rama   | F      |   990790 |
+| sruthi | F      |  6546789 |
++--------+--------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from faculty;
++-------+---------+--------+-----+-----+----------+--------+
+| FacNo | FacName | Gender | DOB | DOJ | MobileNo | DeptNo |
++-------+---------+--------+-----+-----+----------+--------+
+|     1 | kiran   | M      |2000 |2020 | 54647648 |  56    |
+|     2 | raghu   | M      |1990 |2021 | 65737673 |  23    |
+|     3 | sam     | F      |1996 |2021 |  7886954 |  43    |
+|     4 | sandhya | F      |1999 |2019 |  9807965 |  21    |
++-------+---------+--------+-----+-----+----------+--------+
+4 rows in set (0.04 sec)
+
+mysql> select * from faculty order by DOB DESC;
++-------+---------+--------+-----+-----+----------+--------+
+| FacNo | FacName | Gender | DOB | DOJ | MobileNo | DeptNo |
++-------+---------+--------+-----+-----+----------+--------+
+|     4 | sandhya | F      |1999 |2019 | 54647648 | 21     |
+|     3 | sam     | F      |1996 |2021 | 65737673 | 43     |
+|     2 | raghu   | M      |1990 |2021 |  7886954 | 23     |
+|     1 | kiran   | M      |2000 |2020 |  9807965 | 56     |
++-------+---------+--------+-----+-----+----------+--------+
+4 rows in set (0.05 sec)
