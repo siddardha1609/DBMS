@@ -1,0 +1,38 @@
+               EXPERIMENT-18
+
+
+
+18)
+mysql> create database dataa;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> Create table Student_age(age INT, Name Varchar(35));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> DELIMITER //
+mysql> Create Trigger before_inser_studentage BEFORE INSERT ON student_age FOR EACH ROW
+    -> BEGIN
+    -> IF NEW.age < 0 THEN SET NEW.age = 0;
+    -> END IF;
+    -> END //
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> INSERT INTO Student_age(age, Name) values(20, 'Ram');
+    -> INSERT INTO Student_age values(25, 'kumar');
+    -> INSERT INTO Student_age(age, Name) values(-15, 'Harsha');
+    ->  Select * from Student_age;
+    -> end//
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
++------+--------+
+| age  | Name   |
++------+--------+
+|   20 | Ram    |
+|   25 | kumar  |
+|    0 | Harsha |
++------+--------+
+3 rows in set (0.01 sec)
