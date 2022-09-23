@@ -1,0 +1,30 @@
+             EXPERIMENT-15
+
+
+
+15)
+mysql> DELIMITER //
+mysql> CREATE FUNCTION Sample (bonus INT)
+    ->    RETURNS INT
+    ->    BEGIN
+    ->       DECLARE income INT;
+    ->       SET income = 0;
+    ->       myLabel: LOOP
+    ->          SET income = income + bonus;
+    ->         IF income < 5000 THEN
+    ->         ITERATE myLabel;
+    ->          END IF;
+    ->          LEAVE myLabel;
+    ->       END LOOP myLabel;
+    ->    RETURN income;
+    -> END; //
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> DELIMITER ;
+mysql> SELECT Sample(3000);
++--------------+
+| Sample(3000) |
++--------------+
+|        5000  |
++--------------+
+1 row in set (0.05 sec)
