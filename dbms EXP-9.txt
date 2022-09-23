@@ -1,0 +1,61 @@
+              EXPERIMENT-9
+
+
+
+9)
+mysql> create table course(course_name varchar(20),course_no int(10),marks int);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc course;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| course_name | varchar(20) | YES  |     | NULL    |       |
+| course_no   | int(10)     | YES  |     | NULL    |       |
+| marks       | int(11)     | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into course values('dbms',12,56);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into course values('pdsd',22,96);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into course values('ds',13,76);
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql> select* from course;
++-------------+-----------+-------+
+| course_name | course_no | marks |
++-------------+-----------+-------+
+| dbms        |        12 |    56 |
+| pdsd        |        22 |    96 |
+| ds          |        13 |    76 |
++-------------+-----------+-------+
+3 rows in set (0.00 sec)
+
+
+mysql> create table std_info(std_name varchar(20),course_name varchar(20),regno int(9));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into std_info values('ram','dbms',5454556);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into std_info values('sam','ds',5456686);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into std_info values('ramu','pdsd',54567886);
+Query OK, 1 row affected (0.01 sec)
+
+
+mysql> select*from course join std_info on course.course_name = std_info.course_name;
++-------------+-----------+-------+----------+-------------+----------+
+| course_name | course_no | marks | std_name | course_name | regno    |
++-------------+-----------+-------+----------+-------------+----------+
+| dbms        |        12 |    56 | ram      | dbms        |  5454556 |
+| ds          |        13 |    76 | sam      | ds          |  5456686 |
+| pdsd        |        22 |    96 | ramu     | pdsd        | 54567886 |
++-------------+-----------+-------+----------+-------------+----------+
+3 rows in set (0.00 sec)
