@@ -1,0 +1,17 @@
+          EXPERIMENT-16
+
+
+
+16)
+mysql> use student;
+Database changed
+mysql>  CREATE FUNCTION hello (s CHAR(20)) RETURNS CHAR(50) DETERMINISTIC RETURN CONCAT('Hello, ',s,'!');
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select hello('world');
++----------------+
+| hello('world') |
++----------------+
+| Hello, world!  |
++----------------+
+1 row in set (0.01 sec)
